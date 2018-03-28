@@ -8,26 +8,36 @@
   <body>
     <div class="wrapper">
       <div class="track">
-        <img src="images/spa.png" alt="">
+        <img src="images/spa2.png" alt="" usemap="image-map-map">
+        <map name="image-map-map" id="image-map-map">
+<area alt="1" title="1" shape="rect" coords="64,577,149,657" style="outline:none;" target="_self"     />
+<area alt="2" title="2" shape="rect" coords="91,450,176,530" style="outline:none;" target="_self"     />
+<area shape="rect" coords="963,684,965,686" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+</map>
+
       </div>
       <div class="sidebar">
-        <p>Entry</p>        
-        <ul>
-          <li><button type="button" name="button" selected="selected">Understeer</button> </li>
-          <li><button type="button" name="button">OVERsteer</button> </li>
+        <div class="closeButton">
+          <p>X</p>
+        </div>
+        <h1>Turn </h1>
+        <p>Entry</p>
+        <ul data-area="entry">
+          <li id="entry-under"><button type="button" value="Understeer">Understeer</button> </li>
+          <li id="entry-over"><button type="button" value="OVERsteer">OVERsteer</button> </li>
         </ul>
 
         <p>Mid corner</p>
-        <ul>
-          <li><button type="button" name="button">Understeer</button> </li>
-          <li><button type="button" name="button">OVERsteer</button> </li>
+        <ul data-area="mid">
+          <li id="mid-under"><button type="button">Understeer</button> </li>
+          <li id="mid-over"><button type="button">OVERsteer</button> </li>
         </ul>
 
 
         <p>Exit</p>
-        <ul>
-          <li><button type="button" name="button">Understeer</button> </li>
-          <li><button type="button" name="button">OVERsteer</button> </li>
+        <ul data-area="exit">
+          <li id="exit-under"><button type="button">Understeer</button> </li>
+          <li id="exit-over"><button type="button">OVERsteer</button> </li>
         </ul>
       </div><!-- sidebar ends -->
     </div><!-- wrapper ends -->
