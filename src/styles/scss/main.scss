@@ -1,0 +1,40 @@
+@import "reset";
+@import "config";
+@import "typography";
+
+img {
+  max-width: 100%;
+}
+
+
+.sidebar {
+  display: none;
+
+  // temp until grid is ready
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  // width: 350px;
+  background: #fff;
+  height: 100vh;
+
+  // temp ends
+
+  padding: $baseline;
+
+  p {
+    margin-top: $baseline*2;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+
+
+    button {
+      width: 150px;
+      padding: $baseline 0;
+      margin-right: $baseline;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: $fontstack;
+	color: $colour;
+}
+
+
+a {
+	color: $colour-accent;
+}
+
+p, li, td, th, address {
+	font-size: 1.4rem;
+	line-height: 1.5;
+	margin-bottom: $baseline/2;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.6rem;
+	font-weight: 400;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {font-size: 0.707em;}
