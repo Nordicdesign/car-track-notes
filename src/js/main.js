@@ -27,11 +27,12 @@ sessionStorage.setItem('18', '');
 sessionStorage.setItem('19', '');
 sessionStorage.setItem('20', '');
 
+var turn = '';
 
 // trigger the sidebar
 $('.track area').click(function() {
 
-  var turn = whatTurn($(this));
+  whatTurn($(this));
 
   //write the turn header
   $('.sidebar h1').empty().append('Turn ' + turn);
@@ -55,7 +56,7 @@ $('.track area').click(function() {
 
 // select an option
 $('.sidebar li').click(function (){
-
+  console.log(turn);
   $(this).siblings().removeClass('selected');
   $(this).toggleClass('selected');
 
@@ -63,6 +64,7 @@ $('.sidebar li').click(function (){
   var value = $(this).text();
   var area = $(this).parent('ul').attr('data-area');
   console.log(area);
+  console.log(value);
   console.log(value);
 
   sessionStorage.setItem('key', 'value');
@@ -82,7 +84,7 @@ $('.closeButton').click(function(){
 
 // check the turn values ==================
 function checkTurn(data){
-  var turn = whatTurn(data);
+  // turn = whatTurn(data);
   var entry = sessionStorage.getItem(turn + 'entry');
   var mid = sessionStorage.getItem(turn + 'mid');
   var exit = sessionStorage.getItem(turn + 'exit');
@@ -175,9 +177,8 @@ function checkTurn(data){
 //get the turn number ==================
 function whatTurn(element) {
 
-  var turn = $(element).attr('title');
+  turn = $(element).attr('title');
   console.log(turn);
-  return turn;
 }
 
 // open or close the sidebar ==================
