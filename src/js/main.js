@@ -9,8 +9,26 @@ $('.track img').click(function() {
 })
 
 
-function toggleSidebar() {
-  $('.sidebar').toggle();
+// select an option
+$('.sidebar li').click(function (){
+
+  $(this).siblings().removeClass('selected');
+  $(this).toggleClass('selected');
+
+  // $(this).siblings().removeClass('selected').click(toggleSidebar(500));
+});
+
+
+function toggleSidebar(delay) {
+  if (delay) {
+    $('.sidebar').delay(delay).slideToggle();
+  }
+  else {
+    $('.sidebar').slideToggle();
+  }
+
+
+
 }
 
 

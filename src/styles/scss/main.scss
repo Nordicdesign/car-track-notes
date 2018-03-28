@@ -35,6 +35,11 @@ img {
       width: 150px;
       padding: $baseline 0;
       margin-right: $baseline;
+
+    }
+    .selected button {
+      background: tomato;
+      color: #fff;
     }
   }
 }
