@@ -1,31 +1,6 @@
 // JS
 $('document').ready(function (){
 
-// initiate all variables
-sessionStorage.setItem('1entry', '');
-sessionStorage.setItem('1mid', '');
-sessionStorage.setItem('1exit', '');
-sessionStorage.setItem('2entry', 'under');
-sessionStorage.setItem('2mid', '');
-sessionStorage.setItem('2exit', 'over');
-sessionStorage.setItem('3', '');
-sessionStorage.setItem('4', '');
-sessionStorage.setItem('5', '');
-sessionStorage.setItem('6', '');
-sessionStorage.setItem('7', '');
-sessionStorage.setItem('8', '');
-sessionStorage.setItem('9', '');
-sessionStorage.setItem('10', '');
-sessionStorage.setItem('11', '');
-sessionStorage.setItem('12', '');
-sessionStorage.setItem('13', '');
-sessionStorage.setItem('14', '');
-sessionStorage.setItem('15', '');
-sessionStorage.setItem('16', '');
-sessionStorage.setItem('17', '');
-sessionStorage.setItem('18', '');
-sessionStorage.setItem('19', '');
-sessionStorage.setItem('20', '');
 
 var turn = '';
 
@@ -56,18 +31,17 @@ $('.track area').click(function() {
 
 // select an option
 $('.sidebar li').click(function (){
-  console.log(turn);
   $(this).siblings().removeClass('selected');
   $(this).toggleClass('selected');
 
   //what it is my friend?
-  var value = $(this).text();
+  var value = $(this).children('button').attr('value');
   var area = $(this).parent('ul').attr('data-area');
+  console.log(turn);
   console.log(area);
   console.log(value);
-  console.log(value);
 
-  sessionStorage.setItem('key', 'value');
+  sessionStorage.setItem(turn + area, value);
 
 });
 
