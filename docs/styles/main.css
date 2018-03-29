@@ -1,0 +1,149 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: Helvetica, arial, sans-serif;
+  color: #444444; }
+
+a {
+  color: #007C98; }
+
+p, li, td, th, address {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-weight: 400; }
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: 400;
+  line-height: 1.2; }
+
+h1 {
+  margin-top: 0;
+  font-size: 3.6rem;
+  font-weight: 400; }
+
+h2 {
+  font-size: 2.827em; }
+
+h3 {
+  font-size: 1.999em; }
+
+h4 {
+  font-size: 1.414em; }
+
+small, .font_small {
+  font-size: 0.707em; }
+
+img {
+  max-width: 100%; }
+
+.summary {
+  width: 100vw;
+  height: 100vh;
+  padding: 32px; }
+
+.summaryTab {
+  position: absolute;
+  bottom: 0;
+  left: 45%; }
+  .summaryTab p {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background: tomato;
+    color: #fff;
+    line-height: 50px;
+    font-size: 2rem;
+    margin: 0; }
+
+.sidebar {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  height: 100vh;
+  border-left: 2px solid #ccc;
+  padding: 16px; }
+  .sidebar .closeButton {
+    float: left;
+    margin-left: -116px;
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    color: #fff;
+    cursor: pointer; }
+    .sidebar .closeButton p {
+      width: 100px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 50px;
+      margin: 0;
+      font-weight: bold; }
+  .sidebar p {
+    margin-top: 32px; }
+  .sidebar ul {
+    display: flex;
+    flex-direction: row; }
+    .sidebar ul button {
+      width: 150px;
+      padding: 16px 0;
+      margin-right: 16px; }
+    .sidebar ul .selected button {
+      background: tomato;
+      color: #fff; }
