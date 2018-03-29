@@ -5,7 +5,7 @@ $('document').ready(function (){
 var turn = '';
 
 // trigger the sidebar
-$('.track area').click(function() {
+$('.track area').on('click touchstart',function() {
 
   whatTurn($(this));
 
@@ -30,7 +30,7 @@ $('.track area').click(function() {
 
 
 // select an option
-$('.sidebar li').click(function (){
+$('.sidebar li').on("click touchstart",function (){
   $(this).siblings().removeClass('selected');
   $(this).toggleClass('selected');
 
@@ -47,10 +47,17 @@ $('.sidebar li').click(function (){
 
 
 //close the Sidebar
-$('.closeButton').click(function(){
+$('.closeButton').on("click touchstart", function(){
   toggleSidebar();
 });
 
+
+// write the summary
+// $('.summaryTab').click(function(){
+//   for (i=1; i < 22; i++) {
+//     $('.summary div').append('<p>Turn '+i'has:'+  +'</p>')
+//   }
+// });
 
 
 // ========== UTILS =======================
@@ -58,7 +65,6 @@ $('.closeButton').click(function(){
 
 // check the turn values ==================
 function checkTurn(data){
-  // turn = whatTurn(data);
   var entry = sessionStorage.getItem(turn + 'entry');
   var mid = sessionStorage.getItem(turn + 'mid');
   var exit = sessionStorage.getItem(turn + 'exit');

@@ -7,6 +7,32 @@ img {
 }
 
 
+.summary {
+  //display: none;
+  width: 100vw;
+  height: 100vh;
+  padding: $baseline*2;
+}
+
+.summaryTab {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+
+  p {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background: tomato;
+    color: #fff;
+    line-height: 50px;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+}
+
+
 .sidebar {
   display: none;
 
