@@ -5,7 +5,7 @@ $('document').ready(function (){
 var turn = '';
 
 // trigger the sidebar
-$('.track area').on('click touchstart',function() {
+$('.track area').on('click touch',function() {
 
   whatTurn($(this));
 
@@ -30,7 +30,7 @@ $('.track area').on('click touchstart',function() {
 
 
 // select an option
-$('.sidebar li').on("click touchstart",function (){
+$('.sidebar li').on("click touch",function (){
   $(this).siblings().removeClass('selected');
   $(this).toggleClass('selected');
 
@@ -47,7 +47,7 @@ $('.sidebar li').on("click touchstart",function (){
 
 
 //close the Sidebar
-$('.closeButton').on("click touchstart", function(){
+$('.closeButton').on("click touch", function(){
   toggleSidebar();
 });
 
