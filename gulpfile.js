@@ -10,13 +10,13 @@ var runSequence = require('run-sequence');
 gulp.task('sass', function () {
     gulp.src('src/styles/scss/main.scss')
         .pipe(sass({includePaths: ['src/styles/scss']}))
-        .pipe(gulp.dest('build/styles'));
+        .pipe(gulp.dest('docs/styles'));
 });
 
 gulp.task('useref', ['copy:js'], function(){
-  return gulp.src('build/**/*.html')
+  return gulp.src('docs/**/*.html')
     .pipe(useref())
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('docs'))
 });
 
 gulp.task('nunjucks', function() {
@@ -27,35 +27,35 @@ gulp.task('nunjucks', function() {
       path: ['src/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('build'))
+  .pipe(gulp.dest('docs'))
 });
 
 
 gulp.task('browser-sync', function() {
     browserSync.init(["src/styles/*.css", "src/js/*.js", "src/*.html"], {
         server: {
-            baseDir: "./build/"
+            baseDir: "./docs/"
         }
     });
 });
 
 gulp.task('copy:images', function() {
   return gulp.src('src/images/**/*')
-  .pipe(gulp.dest('build/images'))
+  .pipe(gulp.dest('docs/images'))
 })
 
 gulp.task('copy:js', function() {
   return gulp.src('src/js/**/*')
-  .pipe(gulp.dest('build/js'))
+  .pipe(gulp.dest('docs/js'))
 })
 
 
 gulp.task('clean:dist', function() {
-  return del.sync('build');
+  return del.sync('docs');
 })
 
 gulp.task('clean:temp', function() {
-  return del.sync('build/templates');
+  return del.sync('docs/templates');
 })
 
 
