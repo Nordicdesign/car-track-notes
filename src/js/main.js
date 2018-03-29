@@ -4,6 +4,13 @@ $('document').ready(function (){
 
 var turn = '';
 
+
+// make area tappable
+
+$('area').each(function(){
+    this.onclick = function() {}
+});
+
 // trigger the sidebar
 $('.track area').on('click touch',function() {
 
