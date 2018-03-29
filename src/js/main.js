@@ -4,16 +4,10 @@ $('document').ready(function (){
 
 var turn = '';
 
-
-// make area tappable
-
-$('area').each(function(){
-    this.onclick = function() {}
-});
-
 // trigger the sidebar
-$('.track area').on('click touch',function() {
+$('.track area').on('click touch',function(e) {
 
+  e.preventDefault();
   whatTurn($(this));
 
   //write the turn header
