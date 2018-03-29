@@ -97,6 +97,9 @@ img {
   height: 100vh;
   padding: 32px; }
 
+area {
+  cursor: pointer; }
+
 .summaryTab {
   position: absolute;
   bottom: 0;

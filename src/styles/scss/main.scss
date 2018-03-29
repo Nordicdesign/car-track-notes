@@ -14,6 +14,10 @@ img {
   padding: $baseline*2;
 }
 
+area {
+  cursor: pointer;
+}
+
 .summaryTab {
   position: absolute;
   bottom: 0;
