@@ -21,10 +21,8 @@ $('document').ready(function (){
 // initiate global variable
 var turn = '';
 
-
 // trigger the sidebar
 $('area').on('click touch',function() {
-  // alert('TAP!');
   whatTurn($(this));
 
   //write the turn header
@@ -145,40 +143,6 @@ function checkTurn(data){
       $('#exit-over').removeClass('selected');
     }
 
-  //set the values for entry corner
-
-  // for (i=0; i<3; i++) {
-  //   var area;
-  //   if (i === 0){
-  //     var area = 'entry';
-  //   }
-  //   else if (i === 1) {
-  //     var area = 'mid';
-  //   }
-  //   else if (i === 2) {
-  //     var area = 'exit'
-  //   }
-  //   else {
-  //     console.log('hello!');
-  //   }
-  //
-  //   console.log('#'+area+'-under');
-  //
-  //   if (area === 'under') {
-  //     $('#'+area+'-under').addClass('selected');
-  //     $('#'+area+'-over').removeClass('selected');
-  //   }
-  //   else if (area === 'over') {
-  //     $('#'+area+'-under').removeClass('selected');
-  //     $('#'+area+'-over').addClass('selected');
-  //   }
-  //   else {
-  //     $('#'+area+'-under').removeClass('selected');
-  //     $('#'+area+'y-over').removeClass('selected');
-  //   }
-  // }
-
-
 }
 
 
@@ -195,8 +159,4 @@ function toggleSidebar() {
     $('.sidebar').slideToggle();
 }
 
-
-
-
-  // closing document. ready
-});
+}); // closing document. ready
