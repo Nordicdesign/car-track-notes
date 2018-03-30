@@ -53,13 +53,23 @@ $('.sidebar li').on("click touch",function (){
   $(this).toggleClass('selected');
 
   //what it is my friend?
-  var value = $(this).children('button').attr('value');
-  var area = $(this).parent('ul').attr('data-area');
-  console.log(turn);
-  console.log(area);
-  console.log(value);
 
-  sessionStorage.setItem(turn + area, value);
+  // check if nothing is selected
+  if ($(this).hasClass('selected')) {
+    console.log('something is selected')
+    var value = $(this).children('button').attr('value');
+    var area = $(this).parent('ul').attr('data-area');
+    console.log(turn);
+    console.log(area);
+    console.log(value);
+
+    sessionStorage.setItem(turn + area, value);
+  }
+  else {
+    var area = $(this).parent('ul').attr('data-area');
+    sessionStorage.setItem(turn + area, '');
+  }
+
 
 });
 
