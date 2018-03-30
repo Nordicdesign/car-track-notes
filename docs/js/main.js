@@ -5,7 +5,7 @@ $('document').ready(function (){
 var turn = '';
 
 // trigger the sidebar
-$('.track area').on('click touch',function(e) {
+$('.track area').on('click', 'area' ,function() {
 
   whatTurn($(this));
 
