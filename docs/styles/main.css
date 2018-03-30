@@ -51,6 +51,16 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+button,
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
 html {
   font-size: 62.5%; }
 
@@ -93,6 +103,7 @@ img {
   max-width: 100%; }
 
 .summary {
+  display: none;
   width: 100vw;
   height: 100vh;
   padding: 32px; }
@@ -103,7 +114,8 @@ area {
 .summaryTab {
   position: absolute;
   bottom: 0;
-  left: 45%; }
+  left: 45%;
+  cursor: pointer; }
   .summaryTab p {
     width: 150px;
     height: 50px;

@@ -56,3 +56,16 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+
+// avoid iOS styling
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+button,
+.input-checkbox {
+	-webkit-appearance: none;
+	border-radius: 0;
+}

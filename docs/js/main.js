@@ -2,11 +2,28 @@
 $('document').ready(function (){
 
 
+  //make tappable areas clickable
+  var initial_opts = $.extend({},
+    {
+        staticState: true,
+        fill: true,
+        stroke: true,
+        strokeWidth: 4,
+        strokeColor: 'ff0000'
+    });
+
+  $('img').mapster(initial_opts)
+      .mapster('snapshot')
+      .mapster('rebind');
+
+
+// initiate global variable
 var turn = '';
 
-// trigger the sidebar
-$('.track area').on('click',function() {
 
+// trigger the sidebar
+$('area').on('click touch',function() {
+  // alert('TAP!');
   whatTurn($(this));
 
   //write the turn header
@@ -162,13 +179,9 @@ function whatTurn(element) {
 }
 
 // open or close the sidebar ==================
-function toggleSidebar(delay) {
-  if (delay) {
-    $('.sidebar').delay(delay).slideToggle();
-  }
-  else {
+function toggleSidebar() {
+
     $('.sidebar').slideToggle();
-  }
 }
 
 
