@@ -7,7 +7,6 @@ var turn = '';
 // trigger the sidebar
 $('.track area').on('click touch',function(e) {
 
-  e.preventDefault();
   whatTurn($(this));
 
   //write the turn header
