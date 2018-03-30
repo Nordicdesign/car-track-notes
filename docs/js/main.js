@@ -2,14 +2,15 @@
 $('document').ready(function (){
 
 
-  //make tappable areas clickable
+  //make tappable areas clickable and highlight them
   var initial_opts = $.extend({},
     {
         staticState: true,
         fill: true,
+        fillColor: 'f2f3f4',
         stroke: true,
         strokeWidth: 4,
-        strokeColor: 'ff0000'
+        strokeColor: 'cccccc'
     });
 
   $('img').mapster(initial_opts)
