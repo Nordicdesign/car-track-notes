@@ -79,15 +79,77 @@ $('.closeButton').on("click touch", function(){
 
 
 // write the summary
-// $('.summaryTab').click(function(){
-//   for (i=1; i < 22; i++) {
-//     $('.summary div').append('<p>Turn '+i'has:'+  +'</p>')
-//   }
-// });
+$('.summaryTab').click(function(){
+  for (i=1; i < 22; i++) {
 
+    // go through turn i
+
+    // get information about each turn area
+    var entry = sessionStorage.getItem(i + 'entry');
+    var mid = sessionStorage.getItem(i + 'mid');
+    var exit = sessionStorage.getItem(i + 'exit');
+
+
+    // Is there any content?
+    if (entry || mid || exit) {
+      // console.log("there's content! for turn " + i);
+      // write it on screen
+      $('#summary').append('<h2>Turn '+i+'</h2>');
+      if(entry) {
+        $('#summary').append('<p>Turn entry has <strong>'+entry+'steer</strong</p>');
+      }
+      if(mid) {
+        $('#summary').append('<p>Mid turn has <strong>'+mid+'steer</strong</p>');
+      }
+      if(exit) {
+        $('#summary').append('<p>Turn exit has <strong>'+exit+'steer</strong</p>');
+      }
+    }
+  }  // loop ends
+
+  // show summary area
+  $('#summary').toggle();
+  goToByScroll('summary');
+});
+
+
+// clear all content to start again
+$('.clear').click(function(){
+
+  sessionStorage.clear();
+  snackbar();
+  $('document').scrollTop();
+  $('#summary').hide();
+
+});
 
 // ========== UTILS =======================
 
+
+
+// This is a functions that scrolls to #{blah}link
+// from https://stackoverflow.com/questions/3432656/scroll-to-a-div-using-jquery/3432718
+function goToByScroll(id){
+    // Remove "link" from the ID
+  id = id.replace("link", "");
+    // Scroll
+  $('html,body').animate({
+      scrollTop: $("#"+id).offset().top},
+      'slow');
+}
+
+// show the snackbar
+
+function snackbar() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 
 // check the turn values ==================
 function checkTurn(data){
