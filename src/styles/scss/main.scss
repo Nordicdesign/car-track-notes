@@ -7,12 +7,17 @@ img {
   max-height: 100%;
 }
 
-
-#summary {
+#summary, .infoDetail {
   display: none;
-  width: 100vw;
-  height: 100vh;
+  max-width: 80vw;
+  max-height: 90vh;
   padding: $baseline*2;
+
+  h1 {
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: $baseline;
+  }
 
   strong {
     font-weight: bold;
@@ -21,6 +26,23 @@ img {
   h2 {
     margin-bottom: $baseline/4;
     font-size: 2rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 80vw;
+    flex-wrap: wrap;
+
+    div {
+      margin-right: $baseline*2;
+      min-width: 150px;
+    }
+  }
+
+  p {
+    margin-bottom: 5px;
   }
 }
 
@@ -47,10 +69,13 @@ area {
 
 }
 
-.clear {
+
+
+.clear, .infoTab {
   position: absolute;
   top: 0;
   left: 10px;
+  cursor: pointer;
 
   p {
     display: inline-block;
@@ -62,6 +87,16 @@ area {
   }
 }
 
+.infoTab {
+  left: 150px;
+}
+
+.infoDetail {
+  li {
+    list-style: circle;
+    margin-left: $baseline*2;
+  }
+}
 
 // via https://www.w3schools.com/howto/howto_js_snackbar.asp
 

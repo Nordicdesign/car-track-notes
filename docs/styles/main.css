@@ -103,16 +103,31 @@ img {
   max-width: 100%;
   max-height: 100%; }
 
-#summary {
+#summary, .infoDetail {
   display: none;
-  width: 100vw;
-  height: 100vh;
+  max-width: 80vw;
+  max-height: 90vh;
   padding: 32px; }
-  #summary strong {
+  #summary h1, .infoDetail h1 {
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 16px; }
+  #summary strong, .infoDetail strong {
     font-weight: bold; }
-  #summary h2 {
+  #summary h2, .infoDetail h2 {
     margin-bottom: 4px;
     font-size: 2rem; }
+  #summary .content, .infoDetail .content {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 80vw;
+    flex-wrap: wrap; }
+    #summary .content div, .infoDetail .content div {
+      margin-right: 32px;
+      min-width: 150px; }
+  #summary p, .infoDetail p {
+    margin-bottom: 5px; }
 
 area {
   cursor: pointer; }
@@ -132,17 +147,25 @@ area {
     font-size: 2rem;
     margin: 0; }
 
-.clear {
+.clear, .infoTab {
   position: absolute;
   top: 0;
-  left: 10px; }
-  .clear p {
+  left: 10px;
+  cursor: pointer; }
+  .clear p, .infoTab p {
     display: inline-block;
     padding: 0 32px;
     line-height: 50px;
     background: tomato;
     color: #fff;
     font-size: 2rem; }
+
+.infoTab {
+  left: 150px; }
+
+.infoDetail li {
+  list-style: circle;
+  margin-left: 32px; }
 
 #snackbar {
   visibility: hidden;

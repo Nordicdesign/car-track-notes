@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.imagemapster.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -37,12 +39,12 @@
       <div class="summaryTab">
         <p>Summary</p>
       </div>
-      <div id="summary">
-        <h2>Lap summary</h2>
-        <div class="">
+
+      <div id="summary" class="modal">
+        <h1>Lap summary</h1>
+        <div class="content">
 
         </div>
-
       </div><!-- summary ends -->
 
       <div class="clear">
@@ -77,8 +79,27 @@
           <li id="exit-over"><button type="button" value="over">OVERsteer</button> </li>
         </ul>
       </div><!-- sidebar ends -->
-    </div><!-- wrapper ends -->
 
+
+
+      <div class="infoTab">
+        <p>Info</p>
+      </div>
+      <div class="infoDetail">
+        <h1>Info</h1>
+        <p>Simple track testing notes by Alex Lillo.</p>
+        <p>Learn more and get the code here: <a href="https://github.com/Nordicdesign/car-track-notes">https://github.com/Nordicdesign/car-track-notes</a> </p>
+        <h2>Thanks to</h2>
+        <ul>
+          <li>Spa Francorchamps SVG CC by <a href="https://commons.wikimedia.org/wiki/User:Will_Pittenger">Will Pittenger</a> </li>
+          <li>SVG map done with <a href="http://www.image-map.net/">Image-map.net</a> </li>
+          <li>Snackbar by <a href="https://www.w3schools.com/howto/howto_js_snackbar.asp">w3schools</a></li>
+          <li><a href="http://www.outsharked.com/ImageMapster/default.aspx?what.html">ImageMapster</a> for fixing image maps so I can trigger JavaScript events on them.</li>
+        </ul>
+        <p></p>
+      </div>
+
+    </div><!-- wrapper ends -->
 
     <script src="js/main.js" charset="utf-8"></script>
   </body>

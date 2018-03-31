@@ -80,36 +80,50 @@ $('.closeButton').on("click touch", function(){
 
 // write the summary
 $('.summaryTab').click(function(){
-  for (i=1; i < 22; i++) {
 
-    // go through turn i
+  // clean it first
+  $('#summary .content').empty();
+  var isThereContent = 0;
+  for (i=1; i < 21; i++) {
 
     // get information about each turn area
     var entry = sessionStorage.getItem(i + 'entry');
     var mid = sessionStorage.getItem(i + 'mid');
     var exit = sessionStorage.getItem(i + 'exit');
 
-
     // Is there any content?
     if (entry || mid || exit) {
-      // console.log("there's content! for turn " + i);
+      isThereContent = 1;
       // write it on screen
-      $('#summary').append('<h2>Turn '+i+'</h2>');
+
+      $('#summary .content').append('<div class="summaryTurn'+i+'"><h2>Turn '+i+'</h2></div>');
       if(entry) {
-        $('#summary').append('<p>Turn entry has <strong>'+entry+'steer</strong</p>');
+        $('.summaryTurn'+i).append('<p>Turn entry has <strong>'+entry+'steer</strong></p>');
       }
       if(mid) {
-        $('#summary').append('<p>Mid turn has <strong>'+mid+'steer</strong</p>');
+        $('.summaryTurn'+i).append('<p>Mid turn has <strong>'+mid+'steer</strong></p>');
       }
       if(exit) {
-        $('#summary').append('<p>Turn exit has <strong>'+exit+'steer</strong</p>');
+        $('.summaryTurn'+i).append('<p>Turn exit has <strong>'+exit+'steer</strong></p>');
       }
+
     }
+
+
   }  // loop ends
 
+  if (isThereContent === 0) {
+    $('#summary .content').append("<p>No information yet. Why not get out on track and do some laps?</p>");
+  }
+
   // show summary area
-  $('#summary').toggle();
-  goToByScroll('summary');
+  $('#summary').modal();
+});
+
+
+// view info
+$('.infoTab').click(function() {
+  $('.infoDetail').modal()
 });
 
 
@@ -118,25 +132,10 @@ $('.clear').click(function(){
 
   sessionStorage.clear();
   snackbar();
-  $('document').scrollTop();
-  $('#summary').hide();
 
 });
 
 // ========== UTILS =======================
-
-
-
-// This is a functions that scrolls to #{blah}link
-// from https://stackoverflow.com/questions/3432656/scroll-to-a-div-using-jquery/3432718
-function goToByScroll(id){
-    // Remove "link" from the ID
-  id = id.replace("link", "");
-    // Scroll
-  $('html,body').animate({
-      scrollTop: $("#"+id).offset().top},
-      'slow');
-}
 
 // show the snackbar
 
