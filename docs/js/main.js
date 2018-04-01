@@ -55,15 +55,16 @@ $('.sidebar li').on("click touch",function (){
     console.log('something is selected')
     var value = $(this).children('button').attr('value');
     var area = $(this).parent('ul').attr('data-area');
+    console.log(track);
     console.log(turn);
     console.log(area);
     console.log(value);
 
-    sessionStorage.setItem(turn + area, value);
+    localStorage.setItem(track + turn + area, value);
   }
   else {
     var area = $(this).parent('ul').attr('data-area');
-    sessionStorage.setItem(turn + area, '');
+    localStorage.setItem(track + turn + area, '');
   }
 
 
@@ -94,9 +95,9 @@ $('.summaryTab').click(function(){
     console.log(i);
 
     // get information about each turn area
-    var entry = sessionStorage.getItem(i + 'entry');
-    var mid = sessionStorage.getItem(i + 'mid');
-    var exit = sessionStorage.getItem(i + 'exit');
+    var entry = localStorage.getItem(track + i + 'entry');
+    var mid = localStorage.getItem(track + i + 'mid');
+    var exit = localStorage.getItem(track + i + 'exit');
 
     // Is there any content?
     if (entry || mid || exit) {
@@ -139,10 +140,31 @@ $('.infoTab').click(function() {
 
 
 
-// clear all content to start again
+// clear just one track
 $('.clear').click(function(){
 
-  sessionStorage.clear();
+  $('.sidebar').hide(); // close the sidebar if open
+  // get number of turns
+  var numberTurns = $('.track area').length;
+  numberTurns++; // increase number of turns by 1 as tracks do not start on turn 0
+  i = 0;
+  while (i < numberTurns ) {
+    localStorage.removeItem(track + i + 'entry');
+    localStorage.removeItem(track + i + 'mid');
+    localStorage.removeItem(track + i + 'exit');
+    console.log('removed ' +i );
+    i++;
+
+  }
+  snackbar();
+
+
+});
+
+// clear all content to start again
+$('.clearAll').click(function(){
+
+  localStorage.clear();
   snackbar();
   $('.sidebar').hide(); // close the sidebar if open
 
@@ -153,6 +175,20 @@ $('.clear').click(function(){
 
 
 // ========== UTILS =======================
+
+// off screen menu using Scotch Panels
+
+$('#panel').scotchPanel({
+    containerSelector: 'body', // As a jQuery Selector
+    direction: 'left', // Make it toggle in from the left
+    duration: 300, // Speed in ms how fast you want it to be
+    transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+    clickSelector: '.toggle-panel', // Enables toggling when clicking elements of this class
+    distanceX: '250px', // Size fo the toggle
+    enableEscapeKey: true // Clicking Esc will close the panel
+});
+
+
 
 // show the snackbar
 
@@ -169,9 +205,9 @@ function snackbar() {
 
 // check the turn values ==================
 function checkTurn(data){
-  var entry = sessionStorage.getItem(turn + 'entry');
-  var mid = sessionStorage.getItem(turn + 'mid');
-  var exit = sessionStorage.getItem(turn + 'exit');
+  var entry = localStorage.getItem(track + turn + 'entry');
+  var mid = localStorage.getItem(track + turn + 'mid');
+  var exit = localStorage.getItem(track + turn + 'exit');
 
   console.log('entry is ' + entry);
   console.log('mid corner is ' + mid);
