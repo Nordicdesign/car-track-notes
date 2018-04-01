@@ -3,9 +3,19 @@
 @import "typography";
 
 img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  @media all and (orientation: landscape) and (max-width: 700px) {
+    max-height: 85vh;
+  }
+
 }
+.track {
+  @media all and (max-width: 400px) {
+    padding-top: $baseline*4;
+  }
+}
+
 
 #summary, .infoDetail {
   display: none;
@@ -17,6 +27,10 @@ img {
     margin-top: 0;
     font-weight: bold;
     margin-bottom: $baseline;
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
   }
 
   strong {
@@ -43,6 +57,10 @@ img {
 
   p {
     margin-bottom: 5px;
+
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -55,6 +73,11 @@ area {
   bottom: 30px;
   left: 45%;
   cursor: pointer;
+
+  @media all and (orientation: landscape) and (max-width: 700px) {
+    left: 30%;
+    bottom: 70px;
+  }
 
   p {
     width: 150px;
@@ -81,6 +104,11 @@ area {
       margin-bottom: -3px;
       background: #00B057;
     }
+
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      height: 36px;
+      line-height: 36px
+    }
   }
 
 }
@@ -106,17 +134,31 @@ area {
     box-shadow: 0 10px 30px 0 rgba(0,0,0,0.15);
     border-radius: 5px;
     transition: all ease 0.3s;
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      height: 36px;
+      line-height: 36px;
+      padding: 0 $baseline;
+    }
   }
 }
 
 .infoTab {
   left: 150px;
+  @media all and (orientation: landscape) and (max-width: 700px) {
+    left: 120px;
+  }
 }
 
 .infoDetail {
   li {
     list-style: circle;
     margin-left: $baseline*2;
+  }
+
+  @media all and (orientation: landscape) and (max-width: 700px) {
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -205,11 +247,20 @@ However, delay the fade out process for 2.5 seconds */
   // temp ends
 
   border-left: 2px solid #ccc;
-
   padding: $baseline;
 
   p {
     margin-top: $baseline*2;
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      margin-top: $baseline;
+    }
+  }
+  h1 {
+
+    @media all and (orientation: landscape) and (max-width: 700px) {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
   }
   ul {
     display: flex;
@@ -225,6 +276,11 @@ However, delay the fade out process for 2.5 seconds */
       border: 1px solid #D6D6D6;
       box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
       transition: all ease 0.3s;
+
+      @media all and (orientation: landscape) and (max-width: 700px) {
+        font-size: 1.4rem;
+        padding: $baseline/2 0;
+      }
 
       strong {
         font-weight: bold;
