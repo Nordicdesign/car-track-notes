@@ -17,7 +17,7 @@ img {
 }
 
 
-#summary, .infoDetail {
+#summary {
   display: none;
   max-width: 80vw;
   max-height: 90vh;
@@ -115,7 +115,7 @@ area {
 
 
 
-.clear, .infoTab {
+.clear, .toggle-panel {
   position: absolute;
   top: $baseline;
   left: $baseline;
@@ -140,9 +140,14 @@ area {
       padding: 0 $baseline;
     }
   }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
-.infoTab {
+.clear {
   left: 150px;
   @media all and (orientation: landscape) and (max-width: 700px) {
     left: 120px;
@@ -150,15 +155,50 @@ area {
 }
 
 .infoDetail {
+
+  width: 60em;
+  margin: $baseline auto;
+
   li {
     list-style: circle;
     margin-left: $baseline*2;
   }
 
-  @media all and (orientation: landscape) and (max-width: 700px) {
-    p {
-      font-size: 1.2rem;
+}
+
+// off screen menu ===============================
+#panel {
+  background: #f0f0f0;
+  padding: $baseline;
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  li {
+    display: block;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    background: #f5f5f5;
+    margin: 0;
+
+
+    &:last-child {
+      border-bottom: 1px solid #f2f3f4;
     }
+    a {
+      line-height: $baseline*3;
+      display: block;
+      text-decoration: none;
+      color: $colour-med-grey;
+      padding-left: $baseline;
+      margin: 0;
+    }
+  }
+
+  p {
+    margin-top: $baseline*2;
   }
 }
 
