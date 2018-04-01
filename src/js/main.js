@@ -1,7 +1,6 @@
 // JS
 $('document').ready(function (){
 
-
   //make tappable areas clickable and highlight them
   var initial_opts = $.extend({},
     {
@@ -82,8 +81,17 @@ $('.summaryTab').click(function(){
 
   // clean it first
   $('#summary .content').empty();
-  var isThereContent = 0;
-  for (i=1; i < 21; i++) {
+
+  var isThereContent = 0; // used later to check whether to display content or not
+
+  // get number of turns
+  var numberTurns = $('.track area').length;
+  numberTurns++; // increase number of turns by 1 as tracks do not start on turn 0
+
+  // loop through all the turns, see whether there's any content
+  for (i=1; i < numberTurns; i++) {
+
+    console.log(i);
 
     // get information about each turn area
     var entry = sessionStorage.getItem(i + 'entry');
@@ -92,9 +100,9 @@ $('.summaryTab').click(function(){
 
     // Is there any content?
     if (entry || mid || exit) {
-      isThereContent = 1;
-      // write it on screen
+      isThereContent = 1; // so we display notes instead of 'no content' message
 
+      // write it on screen
       $('#summary .content').append('<div class="summaryTurn'+i+'"><h2>Turn '+i+'</h2></div>');
       if(entry) {
         $('.summaryTurn'+i).append('<p>Turn entry has <strong>'+entry+'steer</strong></p>');
@@ -120,10 +128,15 @@ $('.summaryTab').click(function(){
 });
 
 
+
+
+
 // view info
 $('.infoTab').click(function() {
   $('.infoDetail').modal()
 });
+
+
 
 
 // clear all content to start again
@@ -134,6 +147,10 @@ $('.clear').click(function(){
   $('.sidebar').hide(); // close the sidebar if open
 
 });
+
+
+
+
 
 // ========== UTILS =======================
 
