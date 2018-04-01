@@ -9,13 +9,12 @@ $('document').ready(function (){
         fill: true,
         fillColor: 'f2f3f4',
         stroke: true,
-        strokeWidth: 4,
+        strokeWidth: 1,
         strokeColor: 'cccccc'
     });
 
   $('img').mapster(initial_opts)
-      .mapster('snapshot')
-      .mapster('rebind');
+      .mapster('snapshot');
 
 
 // initiate global variable
