@@ -52,7 +52,7 @@ area {
 
 .summaryTab {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 45%;
   cursor: pointer;
 
@@ -60,11 +60,27 @@ area {
     width: 150px;
     height: 50px;
     text-align: center;
-    background: tomato;
+
     color: #fff;
     line-height: 50px;
     font-size: 2rem;
     margin: 0;
+    /* Rectangle: */
+    background: #00BD5D;
+    border: 1px solid #00B057;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.15);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all ease 0.3s;
+    &:hover {
+      background: #00B057;
+    }
+    &:active {
+      margin-bottom: -3px;
+      background: #00B057;
+    }
   }
 
 }
@@ -73,17 +89,23 @@ area {
 
 .clear, .infoTab {
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: $baseline;
+  left: $baseline;
   cursor: pointer;
 
   p {
     display: inline-block;
     padding: 0 $baseline*2;
-    line-height: 50px;
-    background: tomato;
+    line-height: 40px;
+    background: $colour-med-grey;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #818089;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.15);
+    border-radius: 5px;
+    transition: all ease 0.3s;
   }
 }
 
@@ -154,7 +176,7 @@ However, delay the fade out process for 2.5 seconds */
   top: 0;
   right: 0;
   // width: 350px;
-  background: #fff;
+  background: #F0F0F0;
   height: 100vh;
 
   .closeButton {
@@ -162,16 +184,21 @@ However, delay the fade out process for 2.5 seconds */
     margin-left: -(100px + $baseline);
     width: 100px;
     height: 100px;
-    background: tomato;
-    color: #fff;
     cursor: pointer;
+
     p {
-      width: 100px;
+      width: 100px - $baseline;
       text-align: center;
-      line-height: 100px;
+      line-height: 100px - $baseline;
       font-size: 50px;
       margin: 0;
       font-weight: bold;
+      background: $colour-med-grey;
+      color: #fff;
+      border: 1px solid #818089;
+      box-shadow: 0 10px 30px 0 rgba(0,0,0,0.15);
+      border-radius: 5px;
+      transition: all ease 0.3s;
     }
   }
 
@@ -193,10 +220,25 @@ However, delay the fade out process for 2.5 seconds */
       width: 150px;
       padding: $baseline 0;
       margin-right: $baseline;
+      background: $colour-light-grey;
+      border-radius: 5px;
+      border: 1px solid #D6D6D6;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+      transition: all ease 0.3s;
+
+      strong {
+        font-weight: bold;
+      }
+
+      &:active {
+        margin-bottom: -3px;
+        background: #d6d6d6;
+      }
 
     }
     .selected button {
-      background: tomato;
+      background: #00BD5D;
+      border: 1px solid #00B057;
       color: #fff;
     }
   }

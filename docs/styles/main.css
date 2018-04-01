@@ -134,31 +134,50 @@ area {
 
 .summaryTab {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 45%;
   cursor: pointer; }
   .summaryTab p {
     width: 150px;
     height: 50px;
     text-align: center;
-    background: tomato;
     color: #fff;
     line-height: 50px;
     font-size: 2rem;
-    margin: 0; }
+    margin: 0;
+    /* Rectangle: */
+    background: #00BD5D;
+    border: 1px solid #00B057;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all ease 0.3s; }
+    .summaryTab p:hover {
+      background: #00B057; }
+    .summaryTab p:active {
+      margin-bottom: -3px;
+      background: #00B057; }
 
 .clear, .infoTab {
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 16px;
+  left: 16px;
   cursor: pointer; }
   .clear p, .infoTab p {
     display: inline-block;
     padding: 0 32px;
-    line-height: 50px;
-    background: tomato;
+    line-height: 40px;
+    background: #94939C;
     color: #fff;
-    font-size: 2rem; }
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #818089;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: all ease 0.3s; }
 
 .infoTab {
   left: 150px; }
@@ -238,7 +257,7 @@ However, delay the fade out process for 2.5 seconds */
   position: absolute;
   top: 0;
   right: 0;
-  background: #fff;
+  background: #F0F0F0;
   height: 100vh;
   border-left: 2px solid #ccc;
   padding: 16px; }
@@ -247,16 +266,20 @@ However, delay the fade out process for 2.5 seconds */
     margin-left: -116px;
     width: 100px;
     height: 100px;
-    background: tomato;
-    color: #fff;
     cursor: pointer; }
     .sidebar .closeButton p {
-      width: 100px;
+      width: 84px;
       text-align: center;
-      line-height: 100px;
+      line-height: 84px;
       font-size: 50px;
       margin: 0;
-      font-weight: bold; }
+      font-weight: bold;
+      background: #94939C;
+      color: #fff;
+      border: 1px solid #818089;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      transition: all ease 0.3s; }
   .sidebar p {
     margin-top: 32px; }
   .sidebar ul {
@@ -265,7 +288,18 @@ However, delay the fade out process for 2.5 seconds */
     .sidebar ul button {
       width: 150px;
       padding: 16px 0;
-      margin-right: 16px; }
+      margin-right: 16px;
+      background: #DCDCDC;
+      border-radius: 5px;
+      border: 1px solid #D6D6D6;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+      transition: all ease 0.3s; }
+      .sidebar ul button strong {
+        font-weight: bold; }
+      .sidebar ul button:active {
+        margin-bottom: -3px;
+        background: #d6d6d6; }
     .sidebar ul .selected button {
-      background: tomato;
+      background: #00BD5D;
+      border: 1px solid #00B057;
       color: #fff; }
