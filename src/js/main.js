@@ -55,15 +55,16 @@ $('.sidebar li').on("click touch",function (){
     console.log('something is selected')
     var value = $(this).children('button').attr('value');
     var area = $(this).parent('ul').attr('data-area');
+    console.log(track);
     console.log(turn);
     console.log(area);
     console.log(value);
 
-    localStorage.setItem(turn + area, value);
+    localStorage.setItem(track + turn + area, value);
   }
   else {
     var area = $(this).parent('ul').attr('data-area');
-    localStorage.setItem(turn + area, '');
+    localStorage.setItem(track + turn + area, '');
   }
 
 
@@ -94,9 +95,9 @@ $('.summaryTab').click(function(){
     console.log(i);
 
     // get information about each turn area
-    var entry = localStorage.getItem(i + 'entry');
-    var mid = localStorage.getItem(i + 'mid');
-    var exit = localStorage.getItem(i + 'exit');
+    var entry = localStorage.getItem(track + i + 'entry');
+    var mid = localStorage.getItem(track + i + 'mid');
+    var exit = localStorage.getItem(track + i + 'exit');
 
     // Is there any content?
     if (entry || mid || exit) {
@@ -183,9 +184,9 @@ function snackbar() {
 
 // check the turn values ==================
 function checkTurn(data){
-  var entry = localStorage.getItem(turn + 'entry');
-  var mid = localStorage.getItem(turn + 'mid');
-  var exit = localStorage.getItem(turn + 'exit');
+  var entry = localStorage.getItem(track + turn + 'entry');
+  var mid = localStorage.getItem(track + turn + 'mid');
+  var exit = localStorage.getItem(track + turn + 'exit');
 
   console.log('entry is ' + entry);
   console.log('mid corner is ' + mid);
