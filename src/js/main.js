@@ -132,7 +132,7 @@ $('.clear').click(function(){
 
   sessionStorage.clear();
   snackbar();
-  toggleSidebar(); // close the sidebar if open
+  $('.sidebar').hide(); // close the sidebar if open
 
 });
 
