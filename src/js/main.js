@@ -59,11 +59,11 @@ $('.sidebar li').on("click touch",function (){
     console.log(area);
     console.log(value);
 
-    sessionStorage.setItem(turn + area, value);
+    localStorage.setItem(turn + area, value);
   }
   else {
     var area = $(this).parent('ul').attr('data-area');
-    sessionStorage.setItem(turn + area, '');
+    localStorage.setItem(turn + area, '');
   }
 
 
@@ -94,9 +94,9 @@ $('.summaryTab').click(function(){
     console.log(i);
 
     // get information about each turn area
-    var entry = sessionStorage.getItem(i + 'entry');
-    var mid = sessionStorage.getItem(i + 'mid');
-    var exit = sessionStorage.getItem(i + 'exit');
+    var entry = localStorage.getItem(i + 'entry');
+    var mid = localStorage.getItem(i + 'mid');
+    var exit = localStorage.getItem(i + 'exit');
 
     // Is there any content?
     if (entry || mid || exit) {
@@ -142,7 +142,7 @@ $('.infoTab').click(function() {
 // clear all content to start again
 $('.clear').click(function(){
 
-  sessionStorage.clear();
+  localStorage.clear();
   snackbar();
   $('.sidebar').hide(); // close the sidebar if open
 
@@ -183,9 +183,9 @@ function snackbar() {
 
 // check the turn values ==================
 function checkTurn(data){
-  var entry = sessionStorage.getItem(turn + 'entry');
-  var mid = sessionStorage.getItem(turn + 'mid');
-  var exit = sessionStorage.getItem(turn + 'exit');
+  var entry = localStorage.getItem(turn + 'entry');
+  var mid = localStorage.getItem(turn + 'mid');
+  var exit = localStorage.getItem(turn + 'exit');
 
   console.log('entry is ' + entry);
   console.log('mid corner is ' + mid);
