@@ -140,8 +140,29 @@ $('.infoTab').click(function() {
 
 
 
-// clear all content to start again
+// clear just one track
 $('.clear').click(function(){
+
+  $('.sidebar').hide(); // close the sidebar if open
+  // get number of turns
+  var numberTurns = $('.track area').length;
+  numberTurns++; // increase number of turns by 1 as tracks do not start on turn 0
+  i = 0;
+  while (i < numberTurns ) {
+    localStorage.removeItem(track + i + 'entry');
+    localStorage.removeItem(track + i + 'mid');
+    localStorage.removeItem(track + i + 'exit');
+    console.log('removed ' +i );
+    i++;
+
+  }
+  snackbar();
+
+
+});
+
+// clear all content to start again
+$('.clearAll').click(function(){
 
   localStorage.clear();
   snackbar();

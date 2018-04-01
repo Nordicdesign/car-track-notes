@@ -102,6 +102,32 @@ h4 {
 small, .font_small {
   font-size: 0.707em; }
 
+#panel {
+  background: #f0f0f0;
+  padding: 16px; }
+  #panel .selected {
+    font-weight: bold; }
+  #panel h3 {
+    font-size: 1.2rem;
+    font-weight: bold; }
+  #panel li {
+    display: block;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    background: #f5f5f5;
+    margin: 0; }
+    #panel li:last-child {
+      border-bottom: 1px solid #f2f3f4; }
+    #panel li a {
+      line-height: 48px;
+      display: block;
+      text-decoration: none;
+      color: #94939C;
+      padding-left: 16px;
+      margin: 0; }
+  #panel p {
+    margin-top: 32px; }
+
 img {
   max-width: 100vw;
   max-height: 100vh; }
@@ -151,13 +177,13 @@ area {
 
 .summaryTab {
   position: absolute;
-  bottom: 30px;
+  bottom: 3vh;
   left: 45%;
   cursor: pointer; }
   @media all and (orientation: landscape) and (max-width: 700px) {
     .summaryTab {
       left: 30%;
-      bottom: 70px; } }
+      bottom: 5vh; } }
   .summaryTab p {
     width: 150px;
     height: 50px;
@@ -185,14 +211,14 @@ area {
         height: 36px;
         line-height: 36px; } }
 
-.clear, .toggle-panel {
+.clear, .toggle-panel, .clearAll {
   position: absolute;
   top: 16px;
   left: 16px;
   cursor: pointer; }
-  .clear p, .toggle-panel p {
+  .clear p, .toggle-panel p, .clearAll p {
     display: inline-block;
-    padding: 0 32px;
+    padding: 0 16px;
     line-height: 40px;
     background: #94939C;
     color: #fff;
@@ -204,19 +230,36 @@ area {
     border-radius: 5px;
     transition: all ease 0.3s; }
     @media all and (orientation: landscape) and (max-width: 700px) {
-      .clear p, .toggle-panel p {
+      .clear p, .toggle-panel p, .clearAll p {
         height: 36px;
         line-height: 36px;
         padding: 0 16px; } }
-  .clear a, .toggle-panel a {
+    @media all and (max-width: 400px) {
+      .clear p, .toggle-panel p, .clearAll p {
+        line-height: 3.2em;
+        font-size: 1rem;
+        padding: 0 8px; } }
+  .clear a, .toggle-panel a, .clearAll a {
     color: #fff;
     text-decoration: none; }
 
 .clear {
-  left: 150px; }
+  left: 12em; }
   @media all and (orientation: landscape) and (max-width: 700px) {
     .clear {
-      left: 120px; } }
+      left: 10em; } }
+  @media all and (max-width: 400px) {
+    .clear {
+      left: 8em; } }
+
+.clearAll {
+  left: 24em; }
+  @media all and (orientation: landscape) and (max-width: 700px) {
+    .clearAll {
+      left: 20em; } }
+  @media all and (max-width: 400px) {
+    .clearAll {
+      left: 15em; } }
 
 .infoDetail {
   width: 60em;
@@ -224,30 +267,6 @@ area {
   .infoDetail li {
     list-style: circle;
     margin-left: 32px; }
-
-#panel {
-  background: #f0f0f0;
-  padding: 16px; }
-  #panel h3 {
-    font-size: 1.2rem;
-    font-weight: bold; }
-  #panel li {
-    display: block;
-    border-top: 1px solid #ccc;
-    width: 100%;
-    background: #f5f5f5;
-    margin: 0; }
-    #panel li:last-child {
-      border-bottom: 1px solid #f2f3f4; }
-    #panel li a {
-      line-height: 48px;
-      display: block;
-      text-decoration: none;
-      color: #94939C;
-      padding-left: 16px;
-      margin: 0; }
-  #panel p {
-    margin-top: 32px; }
 
 #snackbar {
   visibility: hidden;
