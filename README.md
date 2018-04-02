@@ -24,11 +24,11 @@ This will be fairly obvious if you know front-end, but here's a rough how-to in 
 2. Duplicate index.html to whatever track you want (e.g. catalunya.html)
 3. Use gulp if you know what it is. If not, ignore that and just modify the "docs" folder
 4. Find a creative commons PNG or SVG map of the track. Wikipedia seems to have them
-5. replace the line <img src="images/put_your_SVG_image_here.svg" usemap="#image-map">
+5. replace src="images/put_your_SVG_image_here.svg"
 6. Use a tool like https://www.image-map.net/ so generate all the circles on the turns you want to track (or rectangles, or polygons), making sure you use the turn number on the TITLE attribute. E.g. turn one should have title="1")
 7. Copy and replace the AREA lines (29 to 44)
 8. Publish it wherever you want, or run it locally on your computer
 9. (optional) Let me know so, I can add your track to the list and make it available to everybody else!
 
 
-Thanks to "Krusti":https://forum.studio-397.com/index.php?members/krusti.45090/ for adding Catalunya.
+Thanks to Krusti (https://forum.studio-397.com/index.php?members/krusti.45090/) for adding Catalunya.
