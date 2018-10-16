@@ -1,0 +1,17 @@
+{
+  "name": "setupnotes",
+  "version": "1.0.2",
+  "main": "index.html",
+  "repository": "https://github.com/Nordicdesign/car-track-notes.git",
+  "author": "Alex Lillo <alex.lillo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-useref": "^3.1.5",
+    "run-sequence": "^2.2.1"
+  }
+}
