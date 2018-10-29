@@ -210,7 +210,8 @@ img {
         font-size: 1rem; } }
 
 area {
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: #ccc; }
 
 .summaryTab {
   position: absolute;
