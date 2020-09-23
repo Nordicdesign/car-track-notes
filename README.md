@@ -1,3 +1,5 @@
+OUTDATED: Please check my newer version here: https://github.com/Nordicdesign/track-map
+
 # car-track-notes
 
 A crude tool to take notes of your racecar's behaviour while testing on Spa or Catalunya. It captures oversteer or understeer on turn entry, mid corner and exit-acceleration.
